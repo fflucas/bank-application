@@ -1,0 +1,12 @@
+version: '3.9' # optional since v1.27.0
+services:
+  database:
+    build: docker/db/
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=dev2021
+      - MYSQL_DATABASE=Bank
+      - MYSQL_USER=dev2021
+    volumes:
+      - ./.volume/mysql/:/var/lib/mysql
